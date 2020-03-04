@@ -118,12 +118,13 @@ function handleData(data) {
     const root = document.getElementById("gdp-content")
     root.style.display = "flex"
     root.style.flexWrap = "wrap"
-    root.style.alignItems = "baseline"
+    root.style.alignItems = "flex-end"
     array.forEach((country) => {
       // console.log(country)
       const el = document.createElement("div")
       root.appendChild(el)
       // console.log(country["GDP per capita"])
+      el.innerHTML = `${country["Country or region"]}: ${country["GDP per capita"]}`
       el.style.height =  `${country["GDP per capita"]* 150}px`
       el.style.width = "140px"
       el.style.margin = "5px"
@@ -137,13 +138,14 @@ function handleData(data) {
     const root = document.getElementById("social-content")
     root.style.display = "flex"
     root.style.flexWrap = "wrap"
-    root.style.alignItems = "baseline"
+    root.style.alignItems = "flex-end"
     array.forEach((country) => {
       // console.log(country)
       const el = document.createElement("div")
       root.appendChild(el)
       // console.log(country["Social support"])
       // / array[0]["GDP per capita"]
+      el.innerHTML = `${country["Country or region"]}: ${country["Social support"]}`
       el.style.height =  `${country["Social support"]* 150}px`
       el.style.width = "140px"
       el.style.margin = "5px"
@@ -156,13 +158,14 @@ function handleData(data) {
     const root = document.getElementById("life-content")
     root.style.display = "flex"
     root.style.flexWrap = "wrap"
-    root.style.alignItems = "baseline"
+    root.style.alignItems = "flex-end"
     array.forEach((country) => {
       // console.log(country)
       const el = document.createElement("div")
       root.appendChild(el)
       // console.log(country["Social support"])
       // / array[0]["GDP per capita"]
+      el.innerHTML = `${country["Country or region"]}: ${country["Healthy life expectancy"]}`
       el.style.height =  `${country["Healthy life expectancy"]* 150}px`
       el.style.width = "140px"
       el.style.margin = "5px"
@@ -175,17 +178,18 @@ function handleData(data) {
     const root = document.getElementById("gen-content")
     root.style.display = "flex"
     root.style.flexWrap = "wrap"
-    root.style.alignItems = "baseline"
+    root.style.alignItems = "flex-end"
     array.forEach((country) => {
       // console.log(country)
       const el = document.createElement("div")
       root.appendChild(el)
       // console.log(country["Social support"])
       // / array[0]["GDP per capita"]
-      el.style.height =  `${country["Healthy life expectancy"]* 150}px`
+      el.innerHTML = `${country["Country or region"]}: ${country["Generosity"]}`
+      el.style.height =  `${country["Generosity"]* 250}px`
       el.style.width = "140px"
       el.style.margin = "5px"
-      el.style.backgroundColor = "#fed8b1"
+      el.style.backgroundColor = "#b19cd9"
     });
   }
 
@@ -206,4 +210,6 @@ function handleData(data) {
   visualizeSocial(fields)
   // Visualize Healthy
   visualizeHealthy(fields)
+  // Visualize Generosity
+  visualizeGenerosity(fields)
 }
